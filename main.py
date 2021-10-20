@@ -1,3 +1,5 @@
+import math
+from math import sqrt
 "Exercitiul 1"
 def citire_lista():
     result_list = []
@@ -47,6 +49,18 @@ def test_numar_minim_egal_cu_ultima_cifra():
         assert numar_minim_egal_cu_ultima_cifra([1,2,3,4,5,555], 5) == 5
 
 test_numar_minim_egal_cu_ultima_cifra()
+
+def is_prime(numar):
+    if numar < 2:
+        return False
+    if numar == 2:
+        return True
+    if numar % 2 == 0:
+        return False
+    for x in range(3, int(math.sqrt(numar)) + 1, 2): #aflam daca un numar este prim
+        if numar % x == 0: #daca numarul se imparte la x returnam fals, deoarece nu e prim
+            return False
+    return True
 
 
 def main():
